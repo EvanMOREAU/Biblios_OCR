@@ -21,15 +21,16 @@ class AuthorType extends AbstractType
                 'widget' => 'single_text'
             ])
             ->add('dateOfDeath', DateType::class, [
-                'widget' => 'single_text'
+                'widget' => 'single_text',
+                'required' => false,
             ])
             ->add('nationality', TextType::class)
-            // ->add('books', EntityType::class, [
-            //     'class' => Book::class,
-            //     'choice_label' => 'id',
-            //     'multiple' => true,
-            //     'required' => false,
-            // ])
+            ->add('books', EntityType::class, [
+                'class' => Book::class,
+                'choice_label' => 'id',
+                'multiple' => true,
+                'required' => false,
+            ])
         ;
     }
 
